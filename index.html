@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English → French → Marathi Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+            <h1>🌍 English → French → Marathi</h1>
+            <p>Translate English to French with Marathi pronunciation</p>
+        </header>
+
+        <main>
+            <!-- API Key Input Section -->
+            <div class="api-key-section" id="apiKeySection">
+                <label for="groqApiKey">🔑 Enter your Groq API Key:</label>
+                <div class="api-key-input-group">
+                    <input 
+                        type="password" 
+                        id="groqApiKey" 
+                        placeholder="Enter your Groq API key here..."
+                        class="api-key-input"
+                    >
+                    <button id="toggleKeyVisibility" class="toggle-visibility">👁️</button>
+                </div>
+                <p class="api-help">
+                    Don't have a key? <a href="https://console.groq.com/keys" target="_blank">Get one free from Groq</a>
+                </p>
+                <button id="saveKeyBtn">Save & Continue</button>
+            </div>
+
+            <!-- Translation Section (hidden initially) -->
+            <div class="translation-section" id="translationSection" style="display: none;">
+                <div class="api-status">
+                    <span class="status-indicator">🔑 API Key Active</span>
+                    <button id="changeKeyBtn">Change Key</button>
+                </div>
+
+                <div class="input-section">
+                    <label for="englishInput">Enter English text:</label>
+                    <textarea 
+                        id="englishInput" 
+                        placeholder="Type your English word or sentence here..."
+                        rows="3"
+                    ></textarea>
+                    <button id="translateBtn">Translate</button>
+                </div>
+
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Translating...</p>
+                </div>
+
+                <div class="results" id="results" style="display: none;">
+                    <div class="result-card">
+                        <h3>🇫🇷 French Translation:</h3>
+                        <p id="frenchResult" class="french-text"></p>
+                        <button class="copy-btn" onclick="copyToClipboard('frenchResult')">Copy</button>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>🗣️ Marathi Pronunciation:</h3>
+                        <p id="marathiResult" class="marathi-text"></p>
+                        <button class="copy-btn" onclick="copyToClipboard('marathiResult')">Copy</button>
+                    </div>
+                </div>
+
+                <div class="error" id="error" style="display: none;">
+                    <p>❌ Translation failed. Please try again.</p>
+                    <p class="error-details" id="errorDetails"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Groq API • Hosted on GitHub Pages <br> Made by Swaroop Ingavale </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
