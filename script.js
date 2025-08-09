@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const marathiResult = document.getElementById('marathiResult');
     const themeToggle = document.getElementById('themeToggle');
 
-    // API Key elements
+    // API Key elements on
     const apiKeySection = document.getElementById('apiKeySection');
     const translationSection = document.getElementById('translationSection');
     const groqApiKey = document.getElementById('groqApiKey');
