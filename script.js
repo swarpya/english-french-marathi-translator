@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Step 1: Perform initial translation
     async function performTranslation(text) {
-        const prompt = `Translate the following English text to French and then provide the French pronunciation in Marathi (Devanagari script).
+        const prompt = `Translate the following English text to French and then provide the French pronunciation exactly how french people spell it in Marathi (Devanagari script).
 
 Format your response exactly like this:
 French: [French translation]
